@@ -1,0 +1,237 @@
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(135deg, #6a89a7 0%, #88bdf2 50%, #c8e4ff 100%);
+    color: white;
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(106, 137, 167, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: float 20s linear infinite;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-section .lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* Hero Buttons */
+.hero-section .btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .btn-primary {
+    background: linear-gradient(45deg, #384959, #6a89a7);
+    border: none;
+    box-shadow: 0 4px 15px rgba(56, 73, 89, 0.3);
+}
+
+.hero-section .btn-outline-primary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(56, 73, 89, 0.4);
+}
+
+.hero-section .btn-outline-primary:hover {
+    background: white;
+    color: #384959;
+    transform: translateY(-3px);
+}
+
+/* Feature Cards Section */
+.row.mt-5 {
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(106, 137, 167, 0.15);
+    transition: all 0.3s ease;
+    height: 100%;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6a89a7, #88bdf2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(106, 137, 167, 0.25);
+}
+
+.card-body {
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-title {
+    color: #384959;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #6a89a7, #88bdf2);
+    border-radius: 2px;
+}
+
+.card-text {
+    color: #5a6d7e;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Add icons to cards using pseudo-elements */
+.col-md-4:nth-child(1) .card-body::before {
+    content: ' ';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.col-md-4:nth-child(2) .card-body::before {
+    content: ' ';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.col-md-4:nth-child(3) .card-body::before {
+    content: ' ';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design for Home Page */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .row.mt-5 {
+        margin: 2rem auto;
+    }
+    
+    .col-md-4 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-body {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Additional Animations */
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-20px, -20px) rotate(360deg); }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation for cards */
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.col-md-4:nth-child(2) .card {
+    animation-delay: 0.2s;
+}
+
+.col-md-4:nth-child(3) .card {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

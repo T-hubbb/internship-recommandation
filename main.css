@@ -1,0 +1,381 @@
+/* =========================================
+   GLOBAL RESET & TYPOGRAPHY
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #c8e4ff, #88bdf2);
+  color: #384959;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+  background-color: #6a89a7;
+  padding: 0.9rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #eaf3ff;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: #e1ecff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #e1ecff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+.main-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================
+   ALERTS
+========================================= */
+.alert {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 3px 10px rgba(56, 73, 89, 0.15);
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.alert-success {
+  background-color: #d7f8d0;
+  color: #215b18;
+  border-left: 6px solid #58b347;
+}
+
+.alert-danger {
+  background-color: #fbe3e5;
+  color: #842029;
+  border-left: 6px solid #e65a65;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   CARD
+========================================= */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(56, 73, 89, 0.2);
+  overflow: hidden;
+  width: 100%;
+  max-width: 850px;
+  animation: slideUp 0.8s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1.5rem auto;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(56, 73, 89, 0.25);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #6a89a7, #88bdf2);
+  color: white;
+  text-align: center;
+  padding: 1.8rem 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.card-body {
+  padding: 2.5rem 2rem;
+  background-color: #fdfdfd;
+}
+
+/* =========================================
+   GRID SYSTEM
+========================================= */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.col-md-8,
+.col-md-6,
+.col-md-4 {
+  padding: 0 0.75rem;
+}
+
+.col-md-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-md-6 {
+  flex: 0 0 48%;
+  max-width: 48%;
+}
+
+.col-md-4 {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+/* =========================================
+   FORM STYLING
+========================================= */
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #384959;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  border: 1.5px solid #6a89a7;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: #384959;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #88bdf2;
+  box-shadow: 0 0 6px rgba(136, 189, 242, 0.5);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+button.btn, .btn, .btn-primary {
+  background-color: #6a89a7;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.6rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(106, 137, 167, 0.25);
+}
+
+button.btn:hover, .btn:hover, .btn-primary:hover {
+  background-color: #88bdf2;
+  color: #384959;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(136, 189, 242, 0.4);
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+}
+
+/* =========================================
+   PLACEHOLDER & ANIMATIONS
+========================================= */
+::placeholder {
+  color: #9ca9b8;
+  opacity: 1;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-container {
+    padding: 1rem;
+  }
+
+  .card {
+    margin: 0.75rem auto;
+    max-width: 100%;
+  }
+
+  .card-body {
+    padding: 1.5rem 1rem;
+  }
+
+  .col-md-6,
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .alert {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .main-container {
+    padding: 0.5rem;
+  }
+
+  .card-body {
+    padding: 1rem 0.8rem;
+  }
+
+  button.btn,
+  .btn,
+  .btn-primary {
+    width: 100%;
+    padding: 0.9rem 1rem;
+  }
+}
